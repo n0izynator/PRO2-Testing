@@ -60,7 +60,7 @@ namespace XUnitTestProject1.Controllers
                 Comments = "Updated"
             };
 
-            var postResponse = await _client.PostAsync($"{_client.BaseAddress.AbsoluteUri}api/book-borrows/1", new StringContent(JsonConvert.SerializeObject(updatedBookBorrow), Encoding.UTF8, "application/json"));
+            var postResponse = await _client.PutAsync($"{_client.BaseAddress.AbsoluteUri}api/book-borrows/1", new StringContent(JsonConvert.SerializeObject(updatedBookBorrow), Encoding.UTF8, "application/json"));
 
             postResponse.EnsureSuccessStatusCode();
         }
